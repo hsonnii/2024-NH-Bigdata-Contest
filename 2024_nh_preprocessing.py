@@ -12,10 +12,10 @@
 import pandas as pd
 import numpy as np
 
-# 미리 정제를 위한 함수를 지정하고
+# 데이터 정제를 위한 함수
 import re
 def extract_text_only(text):
-    # 정규표현식을 사용하여 알파벳이 아닌 문자를 제거
+    # 정규표현식 사용 - 알파벳이 아닌 문자를 제거
     return ' '.join(re.findall(r'[a-zA-Z]+', text))
 
 # ETF 데이터 불러오기
@@ -33,7 +33,6 @@ df1 = df1.rename(columns={
     'sec_tp': '타입'
 })
 
-# 데이터 정제
 df1['ETF'] = df1['ETF'].apply(extract_text_only)
 
 # ETF 배당 데이터 불러오기
@@ -51,7 +50,6 @@ df2 = df2.rename(columns={
     'ddn_pym_fcy_cd': '배당주기'
 })
 
-# 데이터 정제
 df2['ETF'] = df2['ETF'].apply(extract_text_only)
 
 # ETF 점수 데이터 가져오기
@@ -76,7 +74,6 @@ df3 = df3.rename(columns={
     'vty_z_sor': '변동성Z점수'
 })
 
-# 데이터 정제
 df3['ETF'] = df3['ETF'].apply(extract_text_only)
 
 # 주식 거래 데이터 가져오기
@@ -93,7 +90,6 @@ df4 = df4.rename(columns={
     'sby_bse_xcg_rt': '환율'
 })
 
-# 데이터 정제
 df4['종목'] = df4['종목'].apply(extract_text_only)
 
 # 주식 정보 데이터 가져오기
@@ -113,7 +109,6 @@ df5 = df5.rename(columns={
     'vw_tgt_cnt': '종목조회건수', 'rgs_tgt_cnt': '관심종목등록건수'
 })
 
-# 데이터 정제
 df5['종목'] = df5['종목'].apply(extract_text_only)
 
 # 고객 데이터 가져오기
@@ -128,7 +123,6 @@ df6 = df6.rename(columns={
     'cus_cgr_ivs_rt': '투자비율'
 })
 
-# 데이터 정제
 df6['종목'] = df6['종목'].apply(extract_text_only)
 
 # 유입/유출 데이터 가져오기
