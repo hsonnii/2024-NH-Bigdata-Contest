@@ -1,5 +1,5 @@
 ## **LLM 준비**
-### **필요한 라이브러리 다운로드 받기**
+### **필요 라이브러리 다운로드 **
 """
 
 !pip install chromadb
@@ -12,7 +12,7 @@
 !pip install langchain_openai
 !pip install -U langchain langchain_experimental -q
 
-# 필요한 라이브러리 설치
+# 라이브러리 불러오기
 from langchain.vectorstores import Chroma
 from langchain_community.vectorstores import FAISS
 from langchain_community.llms import HuggingFaceEndpoint
